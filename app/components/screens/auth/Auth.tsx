@@ -6,7 +6,7 @@ const Auth: FC = () => {
   const { navigate } = useTypedNavigation();
 
   return (
-    <View>
+    <View className="mt-20">
       <Text>Auth</Text>
       <Pressable onPress={() => navigate('Home')}>
         <Text>Go Home</Text>
