@@ -10,6 +10,7 @@ const Navigation: FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
+        // hide default nav header
         headerShown: false,
       }}>
         {

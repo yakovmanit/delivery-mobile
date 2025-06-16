@@ -1,16 +1,34 @@
-import { FC } from 'react';
-import {Pressable, Text, View} from 'react-native';
-import {useTypedNavigation} from "@/hooks/useTypedNavigation";
+import {FC, useState} from 'react';
+import {Text, View} from 'react-native';
+import {SubmitHandler, useForm} from "react-hook-form";
+import {IAuthFormData} from "@/types/auth.interface";
 
 const Auth: FC = () => {
-  const { navigate } = useTypedNavigation();
+  const [isReg, setIsReg] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { handleSubmit, reset, control } = useForm<IAuthFormData>({
+    mode: 'onChange',
+  });
+
+  const onSubmit: SubmitHandler<IAuthFormData> = data => {
+    console.log(data);
+  }
 
   return (
-    <View className="mt-20">
-      <Text>Auth</Text>
-      <Pressable onPress={() => navigate('Home')}>
-        <Text>Go Home</Text>
-      </Pressable>
+    <View className="mx-2 items-center justify-center h-full">
+      <View className="w-3/4">
+        <Text className="text-center text-black text-xl font-medium mb-8">
+          {isReg ? 'Sign up' : 'Log in'}
+          {
+            isLoading ? (
+              'Loading...'
+            ) : (
+              'Form'
+            )
+          }
+        </Text>
+      </View>
     </View>
   );
 };
