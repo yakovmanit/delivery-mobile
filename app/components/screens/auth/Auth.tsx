@@ -3,6 +3,7 @@ import {Pressable, Text, View} from 'react-native';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {IAuthFormData} from "@/types/auth.interface";
 import Button from "@/components/ui/button/Button";
+import AuthFields from "@/components/screens/auth/AuthFields";
 
 const Auth: FC = () => {
   const [isReg, setIsReg] = useState(false);
@@ -28,6 +29,8 @@ const Auth: FC = () => {
               'Loading...'
             ) : (
               <>
+                <AuthFields control={control} />
+
                 <Button onPress={handleSubmit(onSubmit)}>
                   {isReg ? 'Sign up' : 'Log in'}
                 </Button>
