@@ -28,7 +28,7 @@ const Auth: FC = () => {
             isLoading ? (
               'Loading...'
             ) : (
-              <>
+              <View>
                 <AuthFields control={control} />
 
                 <Button onPress={handleSubmit(onSubmit)}>
@@ -45,7 +45,7 @@ const Auth: FC = () => {
                     </Text>
                   </Text>
                 </Pressable>
-              </>
+              </View>
             )
           }
         </Text>

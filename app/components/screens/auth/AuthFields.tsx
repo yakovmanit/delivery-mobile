@@ -3,7 +3,6 @@ import {Control} from "react-hook-form";
 import {IAuthFormData} from "@/types/auth.interface";
 import Field from "@/components/ui/field/Field";
 import {validEmail} from "@/components/screens/auth/email.regex";
-import {View} from "react-native";
 
 interface IAuthFields {
   control: Control<IAuthFormData>
