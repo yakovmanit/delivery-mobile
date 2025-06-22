@@ -1,8 +1,8 @@
-import {SafeAreaProvider} from "react-native-safe-area-context";
-import {StatusBar} from "react-native";
-import Navigation from "@/navigation/Navigation";
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AuthProvider from '@/providers/auth/AuthProvider';
+import Navigation from '@/navigation/Navigation';
 import './global.css';
-import AuthProvider from "@/providers/auth/AuthProvider";
 
 export default function App() {
   return (
